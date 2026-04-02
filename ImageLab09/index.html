@@ -2,17 +2,35 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
-     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0.1 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <!-- <a-sky color="#ECECEC"></a-sky> -->
-      <!-- the enviroment entity includes a sky. Choose from the presets"none, default, contact, egypt, checkerboard, forest, goaland, yavapai, goldmine, threetowers, poison, arches, tron, japan, dream, volcano, starry, osiris, moon" -->
-      <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+      <a-sky color="#bfe8ff"></a-sky>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" color="#ffffff"></a-plane>
+
+      <a-sphere position="-0.08 0.88 -5" radius="0.94" color="#ffffff"></a-sphere>
+      <a-sphere position="0.07 2.02 -4.98" radius="0.62" color="#ffffff"></a-sphere>
+      <a-sphere position="-0.03 2.9 -4.96" radius="0.43" color="#ffffff"></a-sphere>
+
+      <a-sphere position="-0.16 3 -4.55" radius="0.04" color="#222222"></a-sphere>
+      <a-sphere position="0.08 3.06 -4.56" radius="0.035" color="#222222"></a-sphere>
+      <a-cone position="-0.02 2.9 -4.48" radius-bottom="0.05" radius-top="0.01" height="0.32" rotation="94 -8 0" color="#ff7a1a"></a-cone>
+
+      <a-sphere position="-0.02 2.18 -4.38" radius="0.025" color="#222222"></a-sphere>
+      <a-sphere position="-0.11 2.12 -4.39" radius="0.028" color="#222222"></a-sphere>
+      <a-sphere position="0.08 2.14 -4.41" radius="0.022" color="#222222"></a-sphere>
+
+      <a-sphere position="0.04 2.08 -4.35" radius="0.05" color="#222222"></a-sphere>
+      <a-sphere position="-0.02 1.82 -4.4" radius="0.045" color="#222222"></a-sphere>
+      <a-sphere position="0.07 1.54 -4.46" radius="0.055" color="#222222"></a-sphere>
+
+      <a-box position="0.03 3.38 -5" depth="0.52" height="0.28" width="0.5" rotation="0 0 -6" color="#1f1f1f"></a-box>
+      <a-box position="0 3.16 -5" depth="0.78" height="0.06" width="0.76" rotation="0 0 -4" color="#111111"></a-box>
+
+      <a-box position="-0.95 2 -5" depth="0.08" height="0.08" width="1.15" rotation="0 8 38" color="#7a5230"></a-box>
+      <a-box position="0.98 1.95 -5.02" depth="0.08" height="0.08" width="1.4" rotation="0 -10 -14" color="#7a5230"></a-box>
+
+      <a-camera position="0 1.6 0"></a-camera>
     </a-scene>
   </body>
 </html>
