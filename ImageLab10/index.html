@@ -1,15 +1,181 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
+    <title>Image Lab 10 - Alien Farm World</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+    <!-- For Project 3, I plan to make a "World of my own Imagination" in VR about a lonely summer farm while aliens invade the sky during a storm. -->
+    <a-scene background="color: #0f1521" renderer="colorManagement: true">
+      <a-assets>
+        <img
+          id="alien-sky"
+          src="vecteezy_full-seamless-spherical-hdri-panorama-360-degrees-angle-view_9927229.png"
+        >
+        <img id="ground-texture" src="../02-Adding-textures-to-sky-and-primitives/Assets/plane.jpg">
+        <img id="barn-texture" src="../02-Adding-textures-to-sky-and-primitives/Assets/texture1.jpg">
+        <img id="metal-texture" src="../02-Adding-textures-to-sky-and-primitives/Assets/texture2.jpg">
+        <img id="accent-texture" src="../02-Adding-textures-to-sky-and-primitives/Assets/texture3.jpg">
+        <img id="hay-texture" src="../02-Adding-textures-to-sky-and-primitives/Assets/texture4.jpg">
+      </a-assets>
+
+      <a-entity position="0 1.6 6">
+        <a-camera></a-camera>
+      </a-entity>
+
+      <a-light type="ambient" color="#d7e2ff" intensity="0.75"></a-light>
+      <a-light type="directional" color="#b7c8ff" intensity="0.85" position="-4 7 3"></a-light>
+      <a-light type="point" color="#71ffe6" intensity="0.9" distance="18" position="0 5 -6"></a-light>
+
+      <a-sky src="#alien-sky" rotation="0 -90 0" radius="90"></a-sky>
+
+      <a-plane
+        src="#ground-texture"
+        position="0 0 -7"
+        rotation="-90 0 0"
+        width="30"
+        height="30"
+        material="repeat: 12 12; roughness: 1"
+      ></a-plane>
+
+      <a-entity position="-4 0 -8">
+        <a-box
+          position="0 1.4 0"
+          width="3.2"
+          height="2.8"
+          depth="2.6"
+          color="#a73d3d"
+          material="src: #barn-texture; repeat: 2 2"
+        ></a-box>
+        <a-box
+          position="-0.86 3.05 0"
+          rotation="0 0 28"
+          width="2.1"
+          height="0.2"
+          depth="2.8"
+          color="#5b2830"
+          material="src: #accent-texture; repeat: 2 1"
+        ></a-box>
+        <a-box
+          position="0.86 3.05 0"
+          rotation="0 0 -28"
+          width="2.1"
+          height="0.2"
+          depth="2.8"
+          color="#5b2830"
+          material="src: #accent-texture; repeat: 2 1"
+        ></a-box>
+        <a-box
+          position="0 1 1.33"
+          width="0.95"
+          height="1.8"
+          depth="0.08"
+          color="#663321"
+          material="src: #accent-texture; repeat: 1 2"
+        ></a-box>
+        <a-box
+          position="-0.85 1.8 1.33"
+          width="0.45"
+          height="0.45"
+          depth="0.08"
+          color="#dff8ff"
+          material="src: #metal-texture; repeat: 1 1; opacity: 0.9"
+        ></a-box>
+        <a-box
+          position="0.85 1.8 1.33"
+          width="0.45"
+          height="0.45"
+          depth="0.08"
+          color="#dff8ff"
+          material="src: #metal-texture; repeat: 1 1; opacity: 0.9"
+        ></a-box>
+      </a-entity>
+
+      <a-entity position="4.5 0 -9">
+        <a-cylinder
+          position="0 1.9 0"
+          radius="0.95"
+          height="3.8"
+          color="#9fb1c0"
+          material="src: #metal-texture; repeat: 1 2"
+        ></a-cylinder>
+        <a-cone
+          position="0 4.45 0"
+          radius-bottom="1.08"
+          radius-top="0.12"
+          height="1.3"
+          color="#6d7a86"
+          material="src: #accent-texture; repeat: 2 1"
+        ></a-cone>
+        <a-box
+          position="0 0.8 0.96"
+          width="0.5"
+          height="1"
+          depth="0.08"
+          color="#4a5560"
+          material="src: #accent-texture; repeat: 1 1"
+        ></a-box>
+        <a-cylinder
+          position="-1.8 0.45 0"
+          rotation="90 0 0"
+          radius="0.45"
+          height="0.9"
+          color="#d4b16a"
+          material="src: #hay-texture; repeat: 2 1"
+        ></a-cylinder>
+        <a-cylinder
+          position="-0.8 0.45 0"
+          rotation="90 0 0"
+          radius="0.45"
+          height="0.9"
+          color="#d4b16a"
+          material="src: #hay-texture; repeat: 2 1"
+        ></a-cylinder>
+        <a-cylinder
+          position="-1.3 1.25 0"
+          rotation="90 0 0"
+          radius="0.45"
+          height="0.9"
+          color="#d4b16a"
+          material="src: #hay-texture; repeat: 2 1"
+        ></a-cylinder>
+      </a-entity>
+
+      <a-entity
+        position="0 5 -6"
+        animation__spin="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear"
+        animation__float="property: position; to: 0 5.4 -6; dir: alternate; loop: true; dur: 2600; easing: easeInOutSine"
+      >
+        <a-cylinder
+          position="0 0 0"
+          radius="1.8"
+          height="0.3"
+          color="#7dcfd1"
+          material="src: #metal-texture; repeat: 3 1; metalness: 0.6; roughness: 0.3"
+        ></a-cylinder>
+        <a-sphere
+          position="0 0.28 0"
+          radius="0.7"
+          scale="1 0.42 1"
+          color="#8fffe9"
+          material="src: #accent-texture; opacity: 0.88"
+        ></a-sphere>
+        <a-sphere position="1.2 -0.03 0" radius="0.09" color="#7affea"></a-sphere>
+        <a-sphere position="-1.2 -0.03 0" radius="0.09" color="#7affea"></a-sphere>
+        <a-sphere position="0 -0.03 1.2" radius="0.09" color="#7affea"></a-sphere>
+        <a-sphere position="0 -0.03 -1.2" radius="0.09" color="#7affea"></a-sphere>
+        <a-sphere position="0.85 -0.03 0.85" radius="0.08" color="#a7fff2"></a-sphere>
+        <a-sphere position="-0.85 -0.03 -0.85" radius="0.08" color="#a7fff2"></a-sphere>
+        <a-cylinder
+          position="0 -2.1 0"
+          radius="0.72"
+          height="4.1"
+          color="#7affea"
+          material="opacity: 0.24; transparent: true"
+        ></a-cylinder>
+      </a-entity>
     </a-scene>
   </body>
 </html>
